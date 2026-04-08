@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 50px;
+        }
+        
+        .page-container {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 30px;
+            width: 800px; /* 固定寬度，方便定位右邊元素 */
+            height: 300px;
+            margin: 0 auto;
+            position: relative; /* 作為定位參考 */
+        }
+
+        /* 表格部分 */
+        table {
+            border-collapse: collapse;
+            width: 300px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        th {
+            background-color: #666;
+            color: white;
+        }
+        .yellow { background-color: yellow; }
+
+        /* 修正後的右側固定元素 */
+        .fixed-div {
+            position: fixed;
+            /* 這裡的 top 和 left 需要根據你的螢幕手動微調，
+               或是使用 calc 函數來對齊中央區塊 */
+            top: 100px;
+            left: calc(50% + 150px); /* 50% 是螢幕中間，+150px 是往右偏移量 */
+            
+            width: 180px;
+            height: 150px;
+            border: 3px solid #7fb80e;
+            padding: 10px;
+            background-color: white;
+            z-index: 100; /* 確保它在最上層 */
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+        <tr class="yellow">
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr class="yellow">
+            <td>3</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <div class="fixed-div">
+        This div element has position: fixed;
+    </div>
+</div>
+
+</body>
+</html>
